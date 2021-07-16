@@ -1,0 +1,2 @@
+Error code 10000: No token entered
+Error code 10001: Invalid token
