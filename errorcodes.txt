@@ -1,2 +1,2 @@
-Error code 10000: No token entered
-Error code 10001: Invalid token
+Error code 10000: Invalid token
+Error code 10001: Client is not logined

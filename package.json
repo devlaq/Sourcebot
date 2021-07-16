@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/devlaq/Sourcebot#readme",
   "dependencies": {
-    "@types/ini": "^1.3.30",
-    "@types/yargs": "^17.0.2",
     "discord.js": "^12.5.3",
     "fs": "^0.0.1-security",
     "ini": "^2.0.0",
@@ -28,6 +26,8 @@
     "yargs": "^17.0.1"
   },
   "devDependencies": {
-    "@types/node": "^16.3.1"
+    "@types/node": "^16.3.1",
+    "@types/ini": "^1.3.30",
+    "@types/yargs": "^17.0.2"
   }
 }
