@@ -1,0 +1,1 @@
+denon run --allow-env --allow-net .\src\index.ts

@@ -1,0 +1,1 @@
+Bot invite link is "https://discord.com/oauth2/authorize?client_id=865391376848781323&scope=bot&permissions=8"

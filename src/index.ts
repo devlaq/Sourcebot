@@ -1,17 +1,15 @@
-import * as yargs from 'yargs';
+import {
+    CommandClient
+} from './lib/deps.ts';
 
-import Files from './file';
+import {
+    PrefixCommand
+} from './commands/commands.ts';
 
-import DiscordBot from './lib/Discord';
+const client = new CommandClient({
+    prefix: 'r'
+});
 
-const token = yargs.argv['token'];
+client.commands.add(PrefixCommand);
 
-const client = new DiscordBot(token);
-
-client.on('ready', () => {
-    console.log(client.user);
-})
-
-client.on('message', (message) => {
-    console.log(message);
-})
+client.connect('TTTOOOKKKEEENNN');
