@@ -1,1 +1,2 @@
-Bot invite link is "https://discord.com/oauth2/authorize?client_id=865391376848781323&scope=bot&permissions=8"
+Bot invite link is "https://discord.com/oauth2/authorize?client_id=865391376848781323&scope=bot&permissions=8" (Expired)
+new invite link: "https://discord.com/oauth2/authorize?client_id=877727707239170102&scope=bot&permissions=8589934591"

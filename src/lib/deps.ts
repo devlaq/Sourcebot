@@ -1,1 +1,1 @@
-export * from 'https://deno.land/x/harmony@v0.9.3/mod.ts';
+export * as Discord from 'https://deno.land/x/harmony@v2.0.0-rc4/mod.ts';

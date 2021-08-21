@@ -1,13 +1,11 @@
-import {
-    Command, CommandContext
-} from '../lib/deps.ts';
+import { Discord } from '../lib/deps.ts';
 
-class Ping extends Command {
+class PingCommand extends Discord.Command {
     name = '핑';
     aliases = ['레이턴시', 'ping', 'laytency'];
-    execute(context: CommandContext) {
-        context.channel.send(`${context.client.ping}ms`);
+    execute(context: Discord.CommandContext) {
+        context.channel.send(`${context.client.gateway.ping}ms`);
     }
 }
 
-export { Ping };
+export default PingCommand;

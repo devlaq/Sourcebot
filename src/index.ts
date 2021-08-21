@@ -43,6 +43,5 @@ class Index {
 const index = new Index();
 index.registerEvents('/home/devlaq/Develop/Sourcebot/src/events');
 const commands = index.registerCommands('/home/devlaq/Develop/Sourcebot/src/commands');
-index.login('ODY1MzkxMzc2ODQ4NzgxMzIz.YPDUhg.vgRNMLTAuyNdAkx7xk4AIhx--fg');
-
-console.log(`${commands} commands`);
+index.login('ODc3NzI3NzA3MjM5MTcwMTAy.YR21oA.xD3GUz-BgKAHmOF118ApxvqN3Dk');
+//이전 토큰 ODY1MzkxMzc2ODQ4NzgxMzIz.YPDUhg.vgRNMLTAuyNdAkx7xk4AIhx--fg
