@@ -7,7 +7,7 @@ It has features for users, but it is the best bot for server operators.
 It includes general server management functions and even provides tools for creating great servers.
 
 # What is this bot's prefix?
-Prefix is '/' (slash)
+Prefix is 'r'
 
 # What does this bot do?
 
