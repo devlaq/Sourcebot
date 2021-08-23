@@ -16,3 +16,8 @@ This bot includes features to make server management easier, and some arcade fea
 # Can I refer the sourcecode?
 
 of course. Anyone can use it if you leave a source
+
+# How can i invite this bot?
+
+Use this invite link
+"https://discord.com/oauth2/authorize?client_id=877727707239170102&scope=bot&permissions=8589934591"

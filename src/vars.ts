@@ -1,9 +1,10 @@
-
-
 class Vars {
 
-    public static version = '0.04';
+    public static defaultConfig: Record<string, unknown> = {
+        token: 'Put your token here',
+        userDataPath: '/example/path/here'
+    }
 
 }
 
-export default Vars;
+export { Vars };
