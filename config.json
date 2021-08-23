@@ -1,1 +1,4 @@
-{"token":"Put your token here","userDataPath":"/example/path/here"}
+{
+    "token": "Put your token here",
+    "userDataPath": "/example/path/here"
+}

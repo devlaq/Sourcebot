@@ -39,7 +39,7 @@ class Config {
 
         if(this.def && createDef) {
             try {
-                Deno.writeTextFileSync(this.file, JSON.stringify(this.def));
+                Deno.writeTextFileSync(this.file, JSON.stringify(this.def, null, 4));
                 this.data = this.def;
                 return 'usedDefault';
             } catch {
@@ -57,7 +57,7 @@ class Config {
         if(!this.data) return 'noData';
 
         try {
-            Deno.writeTextFileSync(this.file, JSON.stringify(this.data));
+            Deno.writeTextFileSync(this.file, JSON.stringify(this.data, null, 4));
             return 'saveFailed';
         } catch {
             return 'saveFailed';
