@@ -2,7 +2,15 @@ class Vars {
 
     public static defaultConfig: Record<string, unknown> = {
         token: 'Put your token here',
-        userDataPath: '/example/path/here'
+        prefix: 'examplePrefix',
+        owners: ['your id here'],
+        commandDirectory: 'command directory here',
+        categories: [
+            {
+                name: 'example',
+                ownersOnly: false
+            }
+        ]
     }
 
 }
