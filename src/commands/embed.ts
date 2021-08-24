@@ -13,7 +13,7 @@ class Embed extends Discord.Command {
 
             context.channel.send(embed);
         } else {
-
+            
         }
     }
 }
