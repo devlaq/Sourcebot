@@ -1,4 +1,5 @@
 import { Discord } from "../deps.ts";
+import { Index } from "../index.ts";
 
 class Eval extends Discord.Command {
     name = 'eval';
@@ -16,7 +17,7 @@ class Eval extends Discord.Command {
         } else {
             const target = context.rawArgs.join(' ');
             try {
-                const result = eval(target);
+                let result = eval(target);
                 const embed = new Discord.Embed()
                 .setTitle('코드 평가')
                 .setDescription(`코드 실행을 완료했습니다.\n\nResult:\n\`${result}\``)
