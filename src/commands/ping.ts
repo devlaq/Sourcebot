@@ -7,8 +7,8 @@ class Ping extends Discord.Command {
     execute(context: Discord.CommandContext) {
         const embed = new Discord.Embed()
         .setTitle('Ping')
-        .addField('WebSocket', `\`${context.client.gateway.ping}ms\``, true)
-        .addField('Laytency', `\`${Date.now() - context.message.createdTimestamp.getTime()}ms\``, true);
+        .addField('WebSocket(인터넷)', `\`${context.client.gateway.ping}ms\``, true)
+        .addField('Laytency(반응속도)', `\`${Date.now() - context.message.createdTimestamp.getTime()}ms\``, true);
         context.channel.send(embed);
     }
 }
