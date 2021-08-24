@@ -21,3 +21,8 @@ of course. Anyone can use it if you leave a source
 
 Use this invite link
 "https://discord.com/oauth2/authorize?client_id=877727707239170102&scope=bot&permissions=8589934591"
+
+# License
+
+This project uses GPL 3.0 License
+This project is open-source
