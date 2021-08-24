@@ -5,6 +5,7 @@ class Vars {
         prefix: 'examplePrefix',
         owners: ['your id here'],
         commandDirectory: 'command directory here',
+        eventDirectory: 'event directory here',
         categories: [
             {
                 name: 'example',
