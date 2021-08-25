@@ -6,6 +6,7 @@ class Index {
 
     public config: Config;
     public client: Discord.CommandClient;
+    public listeners: Listener[] = [];
 
     public static instance: Index;
 
@@ -40,6 +41,7 @@ class Index {
             if(i.name.endsWith('.ts')) {
                 const mod = await import(`file:///${Path.join(Deno.cwd(), this.config.data?.eventDirectory as string, i.name)}`);
                 const listener = new mod.default() as Listener;
+                this.listeners.push(listener);
                 if(listener.once) {
                     this.client.once(listener.event, (...args) => this.listenEvent(listener, listener.onError, args as object[]));
                 } else {

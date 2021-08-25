@@ -6,6 +6,9 @@ class Eval extends Discord.Command {
     ownerOnly = true;
     category = 'devtools';
 
+    description = '코드 평가를 실행합니다. (위험함)';
+    usage = 'rEval <code>';
+
     execute(context: Discord.CommandContext) {
         if(context.rawArgs.length < 1) {
             const embed = new Discord.Embed()

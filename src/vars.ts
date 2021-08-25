@@ -14,6 +14,8 @@ class Vars {
         ]
     }
 
+    public static statusMessageIndex = 0;
+
 }
 
 export { Vars };

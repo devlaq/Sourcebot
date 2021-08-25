@@ -5,6 +5,9 @@ class Help extends Discord.Command {
     aliases = ['?'];
     category = 'general';
 
+    description = '도움말을 출력합니다.';
+    usage = 'rHelp [category]';
+
     execute(context: Discord.CommandContext) {
         if(context.rawArgs.length < 1) {
             const command = context.message.content.split(' ')[0];

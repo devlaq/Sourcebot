@@ -4,6 +4,9 @@ class Bot extends Discord.Command {
     name = 'bot';
     category = 'general';
 
+    description = '봇 정보를 출력합니다.';
+    usage = 'rBot';
+
     execute(context: Discord.CommandContext) {
         const embed = new Discord.Embed()
         .setTitle('Bot 정보')
