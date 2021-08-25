@@ -5,7 +5,7 @@ class SAIBZXBQ extends Discord.Command {
     category = 'utils';
 
     execute(context: Discord.CommandContext) {
-        context.channel.send('검은색#7725');
+        context.channel.send('검은색#7225');
     }
 }
 
