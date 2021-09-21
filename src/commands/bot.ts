@@ -3,6 +3,7 @@ import { Discord } from "../deps.ts";
 class Bot extends Discord.Command {
     name = 'bot';
     category = 'general';
+    aliases = ['봇', '봇정보'];
 
     description = '봇 정보를 출력합니다.';
     usage = 'rBot';
