@@ -2,9 +2,10 @@ import { Discord } from "../deps.ts";
 
 class Embed extends Discord.Command {
     name = 'embed';
+    aliases = ['임베드'];
     category = 'utils';
 
-    description = '사용자 지정 Embed를 생성합니다.';
+    description = '사용자 지정 Embed를 생성합니다. \'^\' 문자는 공백으로 치환됩니다.';
     usage = 'rEmbed <title> <color> <description>'
 
     execute(context: Discord.CommandContext) {
@@ -15,6 +16,7 @@ class Embed extends Discord.Command {
             .setColor('RED');
 
             context.channel.send(embed);
+            
         } else {
             
         }
