@@ -1,17 +1,17 @@
-import { FUtils } from "./util.ts";
+import { FUtils } from "../../util.ts";
 
-class Config {
+class Config<T> {
 
-    public data: Record<string, unknown> | undefined;
-    public def: Record<string, unknown> | undefined;
+    public data: T;
+    public def: T;
     public file: string | URL;
 
     /**
      * @param def default config data
      * @param file file to save and load
      */
-    public constructor(def: Record<string, unknown> | undefined, file: string | URL) {
-        this.data = undefined;
+    public constructor(def: T, file: string | URL) {
+        this.data = def;
         this.def = def;
         this.file = file;
     }
@@ -21,9 +21,7 @@ class Config {
      * @param useDef if file not exists or invalid json, use def to create file and load
      * @returns Is load success
      */
-    public load(): 'loadSuccess' | 'loadFailed' | 'usedDefault' | 'noDefault' {
-        if(!this.def) return 'noDefault';
-
+    public load(): 'loadSuccess' | 'loadFailed' | 'usedDefault' {
         let createDef = false;
         if(FUtils.existsSync(this.file)) {
             const loadedDataString = Deno.readTextFileSync(this.file);
