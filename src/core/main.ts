@@ -15,6 +15,15 @@ class Main {
         this.config = new Config(Vars.defaultBotConfig, configPath);
         this.loadConfig();
 
+        if(this.config.data.token == 'env') {
+            console.log('Getting token from env TOKEN');
+            const TOKEN = Deno.env.get('TOKEN');
+            if(!TOKEN) {
+                console.log('Could not get token from env TOKEN!');
+                Deno.exit(-1);
+            }
+            this.config.data.token = TOKEN;
+        }
 
         this.client = new Discord.CommandClient({
             token: this.config.data.token,
