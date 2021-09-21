@@ -1,22 +1,21 @@
 import { Discord } from "../deps.ts";
-import { Index, Listener } from "../index.ts";
-import { Vars } from "../vars.ts";
+import { Main, Listener } from "../core/main.ts";
+import { Vars } from "../core/vars.ts";
 
 class Status extends Listener {
     event: keyof Discord.ClientEvents = 'ready';
     once = false;
 
     listen(args: Discord.ClientEvents['ready']) {
-        setInterval(this.update, Index.instance.config.data?.statusDelay as number);
+        setInterval(this.update, Main.instance.config.data.statusDelay as number);
     }
     update() {
-        if(Vars.statusMessageIndex == (Index.instance.config.data?.statusMessage as string[]).length) Vars.statusMessageIndex = 0;
-        const message = (Index.instance.config.data?.statusMessage as string[])[Vars.statusMessageIndex++];
-        Index.instance.client.presence.setStatus('online').setActivity({
+        if(Vars.statusMessageIndex == (Main.instance.config.data.statusMessage as string[]).length) Vars.statusMessageIndex = 0;
+        const message = (Main.instance.config.data.statusMessage as string[])[Vars.statusMessageIndex++];
+        Main.instance.client.setPresence({
             name: message,
-            type: 'CUSTOM_STATUS',
-        })
-        console.log(message);
+            type: 'PLAYING'
+        });
     }
 }
 
