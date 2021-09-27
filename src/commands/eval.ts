@@ -13,7 +13,7 @@ class Eval extends Discord.Command {
             const embed = new Discord.Embed()
             .setTitle('코드 평가 실패')
             .setDescription('코드를 원격으로 실행하려면 인수를 주어야합니다!')
-            .setColor('RED');
+            .setColor('red');
 
             context.channel.send(embed);
         } else {
@@ -23,14 +23,14 @@ class Eval extends Discord.Command {
                 const embed = new Discord.Embed()
                 .setTitle('코드 평가 성공')
                 .setDescription(`코드 실행을 완료했습니다.\n\nResult:\n\`${result}\``)
-                .setColor('GREEN');
+                .setColor('lightgreen');
 
                 context.channel.send(embed);
             } catch(err) {
                 const embed = new Discord.Embed()
                 .setTitle('코드 평가 실패')
                 .setDescription(`코드 실행에 실패했거나 코드 실행 도중 에러가 발생했습니다.\n\nError:\n\`${err}\``)
-                .setColor('RED');
+                .setColor('red');
 
                 context.channel.send(embed);
             }
