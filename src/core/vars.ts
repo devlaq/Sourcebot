@@ -1,3 +1,4 @@
+import { Discord } from "../deps.ts";
 import { BotConfig } from "../types/configs.ts";
 
 class Vars {
@@ -33,6 +34,7 @@ class Vars {
 
     public static statusMessageIndex = 0;
 
+    public static deletedMessages = new Map<string, Discord.Message>();
 }
 
 export { Vars };

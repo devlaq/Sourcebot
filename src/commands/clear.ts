@@ -9,7 +9,7 @@ class Clear extends Discord.Command {
 
     guildOnly = true;
 
-    execute(context: Discord.CommandContext) {
+    async execute(context: Discord.CommandContext) {
         if(context.rawArgs.length < 1) {
             const embed = new Discord.Embed()
             .setTitle('청소')
@@ -21,8 +21,6 @@ class Clear extends Discord.Command {
 
         if(context.channel instanceof Discord.GuildTextBasedChannel) {
             const n = Number(context.rawArgs[0]);
-
-            console.log(n);
 
             if(n < 2 || n > 200) {
                 const embed = new Discord.Embed()
@@ -42,7 +40,16 @@ class Clear extends Discord.Command {
                 return;
             }
 
-            context.channel.bulkDelete(n);
+            try {
+                await context.channel.bulkDelete(n);
+            } catch(err) {
+                const embed = new Discord.Embed()
+                .setTitle('청소')
+                .setDescription('권한이 없습니다.')
+                .setColor('red');
+                await context.channel.send(embed);
+                return;
+            }
 
             const embed = new Discord.Embed()
             .setTitle('청소')
