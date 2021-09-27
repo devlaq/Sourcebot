@@ -1,6 +1,11 @@
 import { Discord, Path } from "./deps.ts";
 
-class Data {
+interface Data {
+    id: any;
+    data: object;
+}
+
+class SnowflakeData implements Data {
     public id: Discord.Snowflake;
     public data: Record<string, unknown>;
 
@@ -10,13 +15,23 @@ class Data {
     }
 }
 
-class SnowflakeDataManager {
+interface DataManager {
+    data: any;
+}
+
+interface FileDataManager extends DataManager {
+    path: URL;
+
+    
+}
+
+class SnowflakeDataManager implements FileDataManager {
     public path: URL;
-    public guilds: Map<Discord.Snowflake, Data>;
+    public data: Map<Discord.Snowflake, Data>;
 
     public constructor(path: URL) {
         this.path = path;
-        this.guilds = new Map();
+        this.data = new Map();
     }
 
     public loadAll() {
