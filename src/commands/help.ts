@@ -2,11 +2,11 @@ import { Discord } from "../deps.ts";
 
 class Help extends Discord.Command {
     name = 'help';
-    aliases = ['?'];
+    aliases = ['?', '도움말', '도움', '명령어'];
     category = 'general';
 
     description = '도움말을 출력합니다.';
-    usage = 'rHelp [category]';
+    usage = '`help [category]';
 
     async execute(context: Discord.CommandContext) {
         const embed = new Discord.Embed({
@@ -54,7 +54,11 @@ class Help extends Discord.Command {
             ]
         });
         const [interaction] = await context.client.waitFor('interactionCreate', (interaction) => interaction.isMessageComponent() && interaction.message.id === message.id);
-
+        if(interaction?.isMessageComponent() && interaction.message.id == message.id && interaction.customID == 'helpCategorySelect') {
+            if(interaction.data.values != null && interaction.data.values.length > 0) {
+                const category = interaction.data.values[0];
+            }
+        }
     }
 }
 
